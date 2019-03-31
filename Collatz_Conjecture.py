@@ -6,15 +6,17 @@ def collatz(number):
         result = 3 * number + 1
         return result
 
-print('Enter number:')
-
+print('Enter a positive integer:')
 userNumber = input()
+    
 
 try:
-    while int(userNumber) != 1:
+    while int(userNumber) != 1 and int(userNumber) > 0:
         number_local = collatz(int(userNumber))
         print(number_local)
         userNumber = number_local
+    else:
+        print('Please enter a positive integer.')
 except ValueError:
-    print('Please enter an integer.')
+    print('Please enter a positive integer.')
     
